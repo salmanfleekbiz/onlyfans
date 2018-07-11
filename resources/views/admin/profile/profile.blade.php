@@ -3,7 +3,7 @@
 This is Personal Details
 @endsection
 @section('title')
-Sugar Home - Admin Dashboard
+Only Fans - Admin Dashboard
 @endsection
 @section('contents')
 @include('admin.layout.sidebar')

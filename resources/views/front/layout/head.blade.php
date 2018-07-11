@@ -44,9 +44,9 @@
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li><a href="javascript:void(0);">Cart</a></li>
-<li><a href="{{url('/aboutus')}}">About Us</a></li>
-<li><a href="{{url('/contactus')}}">Contact Us</a></li>
-<li><a href="{{url('/privacypolicy')}}">Policies</a></li>
+<li><a href="javascript:void(0);">About Us</a></li>
+<li><a href="javascript:void(0);">Contact Us</a></li>
+<li><a href="javascript:void(0);">Policies</a></li>
 <li><a href="javascript:void(0);">Help</a></li>
 @if(Auth::user())
 <li><a href="javascript:void(0);">My Account</a></li>

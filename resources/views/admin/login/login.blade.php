@@ -3,12 +3,11 @@
 This is Personal Details
 @endsection
 @section('title')
-Sugar Home - Admin Login
+Only Fans - Admin Login
 @endsection
 @section('contents')
 <form class="form-signin" action="{{ route('admin.login.submit') }}" method="POST" name="adminlogin" id="adminlogin">
 {{ csrf_field() }}	
-<img style="width:100%;" src="{{ url('frontassets/images/logo.png') }}" alt="">
 @if (Session::has('errors'))
 <div class="bs-example">
 <div class="alert alert-danger fade in">
