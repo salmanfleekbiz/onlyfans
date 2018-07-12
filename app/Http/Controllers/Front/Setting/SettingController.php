@@ -1,16 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Front\Register;
+namespace App\Http\Controllers\Front\Setting;
 use Auth;
 use App\User;
-use App\Userinfo;
-use App\Resellercode;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
-class RegisterController extends Controller
+class SettingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,10 +19,27 @@ class RegisterController extends Controller
     {
         if($user = Auth::user())
         {
-            return redirect('/');
+            $setting = 'setting';
+            return view('front.setting.'.$setting);
+            
         }else{
-            $register = 'register';
-            return view('front.register.'.$register);
+
+            return redirect('/login');
+
+        }
+    }
+
+    public function advancedsetting()
+    {
+        if($user = Auth::user())
+        {
+            $advancedsetting = 'advancedsetting';
+            return view('front.setting.'.$advancedsetting);
+            
+        }else{
+
+            return redirect('/login');
+
         }
     }
 
@@ -35,21 +50,7 @@ class RegisterController extends Controller
      */
     public function create(Request $request)
     {
-        if (User::where('email', '=', $request->input("useremail"))->count() > 0) {
-            echo 'emailexist';
-        }else{
-                $user = new User();
-                $user->email=$request->input("useremail");
-                $user->password=bcrypt($request->input("userpassword"));
-                $user->user_role=2;
-                $user->remember_token=$request->input("_token");
-                $user->is_active=0;
-                $user->created_at=date("Y-m-d H:i:s");
-                $user->updated_at=date("Y-m-d H:i:s");
-                $user->save();
-                $userId = $user->id;
-                echo 'useraddsucess';
-        }
+        //
     }
 
     /**

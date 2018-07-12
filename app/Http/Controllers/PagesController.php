@@ -15,8 +15,13 @@ class PagesController extends Controller
      */
     public function index()
     {
-        $home = 'home';
-        return view('front.'.$home);
+        if($user = Auth::user())
+        {
+            $home = 'home';
+            return view('front.'.$home);
+        }else{
+            return redirect('/login');
+        }
     }
 
     /**
